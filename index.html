@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Editor (Vanilla JS)</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="workspace">
+      <!-- Canvas / preview side -->
+      <div class="panel preview">
+        <div class="toolbar">
+          <label class="btn" for="filePicker">
+            Choose image
+            <input id="filePicker" type="file" accept="image/*" hidden />
+          </label>
+
+          <button class="btn btn-danger" id="btnReset" type="button">Reset</button>
+          <button class="btn btn-success" id="btnDownload" type="button">Download</button>
+        </div>
+
+        <div class="stage" id="stage">
+          <div class="empty" id="emptyState">
+            <i class="ri-file-image-line"></i>
+            <p>No image chosen</p>
+          </div>
+          <canvas id="canvas" class="canvas" aria-label="Image canvas"></canvas>
+        </div>
+      </div>
+
+      <!-- Controls side -->
+      <aside class="panel controls">
+        <h2 class="title">Adjust</h2>
+        <div id="sliders" class="sliders"></div>
+
+        <h2 class="title">Presets</h2>
+        <div id="presetGrid" class="preset-grid"></div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
